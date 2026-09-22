@@ -21,7 +21,7 @@ cout<<"division: "<<division<<endl;;
 };
 int main()
 {
-student s1("Mansi",660,1);
+student s1("Rohit",12,2);
 s1.display();
 return 0;
 }
