@@ -1,31 +1,48 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class student
+
+class Book
 {
-private:
-string name;
-int rollno;
-int division;
+    string name;
+    string author;
+    float price;
 
 public:
-student(string n,int r,int d)
-{
-name = n;
-rollno = r;
-division = d;
+
+    // Default constructor
+    Book()
+    {
+        name = "Unknown";
+        author = "Unknown";
+        price = 0;
+    }
+
+    // Parameterized constructor
+    Book(string n, string a, float p)
+    {
+        name = n;
+        author = a;
+        price = p;
+    }
+
+    void display()
+    {
+        cout << "Book Name : " << name << endl;
+        cout << "Author    : " << author << endl;
+        cout << "Price     : Rs." << price << endl;
+    }
 };
-void display()
-{
-cout<<"STUDENT DETAILS"<<endl;
-cout<<"******************"<<endl;
-cout<<"name: "<<name<<endl;
-cout<<"rollno: "<<rollno<<endl;
-cout<<"division: "<<division<<endl;
-}
-};
+
 int main()
 {
-student s1("Mansi",39,1);
-s1.display();
-return 0;
+    Book book1;
+    Book book2("C++ Basics", "R.K. Sharma", 450);
+
+    cout << "--- Default Book ---" << endl;
+    book1.display();
+
+    cout << "\n--- Complete Book Details ---" << endl;
+    book2.display();
+
+    return 0;
 }
