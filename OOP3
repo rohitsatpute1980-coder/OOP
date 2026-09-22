@@ -1,34 +1,41 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-class employee
+
+class Employee
 {
+    int id;
+    string name;
+    string department;
+
 public:
-string employee_name;
-int employee_id;
-float salary;
+    void setData()
+    {
+        cout << "Enter employee ID: ";
+        cin >> id;
 
-void display()
-{
-cout<<"---EMPLOYEE DETAILS---";
+        cout << "Enter employee name: ";
+        cin >> name;
 
-cin.ignore();
-cout<<"Enter the name of the employee: ";
-cin>>employee_name;
-getline(cin, employee_name);
+        cout << "Enter department: ";
+        cin >> department;
+    }
 
-cout<<"Enter the employee id: ";
-cin>>employee_id;
-
-cout<<"Enter the salary of the employee: ";
-cin>>salary;
-}
+    void display()
+    {
+        cout << "\n--- Employee Details ---" << endl;
+        cout << "ID         : " << id << endl;
+        cout << "Name       : " << name << endl;
+        cout << "Department : " << department << endl;
+    }
 };
+
 int main()
 {
-employee e1;
-e1.employee_name;
-e1.employee_id;
-e1.salary;
-e1.display();
-return 0;
+    Employee emp;
+    Employee *ptr = &emp;
+
+    ptr->setData();
+    ptr->display();
+
+    return 0;
 }
