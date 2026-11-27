@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class employee
+{
+        public:
+                int employee_id;
+                string department;
+                float salary;
+
+                employee()
+                {
+                        cout<<"Constructor";
+                }
+                ~employee()
+                {
+                        cout<<"Destructor deleted information."<<endl;
+                }
+                void display()
+                {
+                        cout<<"Employee id is: "<<employee_id<<endl;
+                        cout<<"Employee department is: "<<department<<endl;
+                        cout<<"Salary : "<<salary<<endl;
+                }
+};
+
+int main()
+{
+        employee e1;
+        e1.employee_id = 44466;
+        e1.department = "AIML";
+        e1.salary = 99302.3;
+        e1.display();
+        return 0;
+}
