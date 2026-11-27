@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+class Person {
+  public:
+    string name;
+    int age;
+    string contactInfo;
+
+
+    void displayPersonDetails() const {
+        cout << "Name         : " << name << endl;
+        cout << "Age          : " << age << endl;
+        cout << "Contact Info : " << contactInfo << endl;
+    }
+};
+
+
+class Student : public Person {
+public:
+    int rollNumber;
+    string branch;
+
+
+    void displayStudentDetails() const {
+        cout << "--- Student Information ---" << endl;
+        displayPersonDetails(); // Reuses base class display logic
+        cout << "Roll Number  : " << rollNumber << endl;
+        cout << "Branch       : " << branch << endl;
+        cout << "---------------------------" << endl;
+    }
+};
+
+int main() {
+
+    Student s1("Rohit Satute", 20, "aarav.s@university.edu", 101, "Computer Science");
+    Student s2("manik Patel", 19, "+1-9876543210", 102, "Mechanical Engineering");
+
+
+    s1.displayStudentDetails();
+    cout << endl;
+    s2.displayStudentDetails();
+
+    return 0;
+}
